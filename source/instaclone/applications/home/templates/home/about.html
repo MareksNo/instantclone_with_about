@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% from 'macros/_formhelpers.html' import render_field %}
+
+{% block title %}About Us{% endblock %}
+
+{% block body %}
+    <h1>We did clone instagram.</h1>
+
+    {{ render_field(form.search_item) }}
+
+    <input type="submit" value="Search">
+{% endblock %}
