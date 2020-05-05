@@ -10,6 +10,8 @@ blueprint = Blueprint(
 )
 
 blueprint.add_url_rule(
-    rule='/home/about',
+    rule='/',
     view_func=views.AboutView.as_view('about')
 )
+
+
