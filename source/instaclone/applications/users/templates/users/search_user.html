@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% from 'macros/_formhelpers.html' import render_field %}
+
+{% block title %}Results for your search{% endblock %}
+
+{% block body %}
+    <h1>Found Results:</h1>
+    {% for user in search_results %}
+        <h2>{{ user.email }}</h2>
+    {% endfor %}
+{% endblock %}

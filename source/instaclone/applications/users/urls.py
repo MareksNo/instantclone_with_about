@@ -22,3 +22,8 @@ blueprint.add_url_rule(
     rule='/user/<user_id>/',
     view_func=views.UserProfileView.as_view('user-profile'),
 )
+
+blueprint.add_url_rule(
+    rule='/user/search/<search_item>/',
+    view_func=views.SearchUserView.as_view('search_user')
+)

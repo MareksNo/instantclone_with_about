@@ -56,3 +56,11 @@ class UserProfileView(MethodView):
             template_name_or_list='users/profile_photos.html',
             photos=user.photos,
         )
+
+
+class SearchUserView(MethodView):
+    def get(self, search_item):
+        return flask.render_template(
+            template_name_or_list='users/search_user.html',
+            search_results=User.query.filter(User.email.contains(search_item))
+        )

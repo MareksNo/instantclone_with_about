@@ -7,7 +7,17 @@
 {% block body %}
     <h1>We did clone instagram.</h1>
 
-    {{ render_field(form.search_item) }}
+    <div>
+        <h2>This is Instaclone, as the name suggests, we did clone instagram.
+            Start searching for users now!
+        </h2>
 
-    <input type="submit" value="Search">
+    </div>
+
+     <form action="" method="post">
+
+        {{ render_field(form.search_item) }}
+
+        <input type="submit" value="Search">
+     </form>
 {% endblock %}
