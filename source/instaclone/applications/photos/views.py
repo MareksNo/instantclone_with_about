@@ -19,8 +19,9 @@ class UploadPhotoView(MethodView, FormViewMixin):
 
     def post(self):
         form = self.get_form()
-
+        print(form.photo.data)
         if form.validate_on_submit():
+            print('form has validated')
             photo = form.save()
 
             photo_link = photo.photo_link()

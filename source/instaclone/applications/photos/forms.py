@@ -41,7 +41,7 @@ class PhotoForm(FlaskForm):
         fs_path = flask.current_app.config['UPLOADS_DIRECTORY'] / file_name
 
         # Save file on fs
-        photo_file.save(fs_path)
+        photo_file.save(str(fs_path))
 
     def db_store(self, file_name, user_id):
         # Create photo model instance
@@ -59,23 +59,23 @@ class PhotoForm(FlaskForm):
     def save(self):
         # Get original file object
         photo_file = self.photo.data
-
+        print('got the photo file')
         # Get file name and extension
         file_name, extension = photo_file.filename.rsplit('.', 1)
-
+        print('got the file name and extension')
         new_file_name = self.generate_file_name(
             file_name=file_name,
             extension=extension,
         )
-
+        print('generated a file name')
         self.fs_store(
             photo_file=photo_file,
             file_name=new_file_name,
         )
-
+        print('stored the file')
         photo = self.db_store(
             file_name=new_file_name,
             user_id=current_user.id,
         )
-
+        print('stored the file_name in the database')
         return photo

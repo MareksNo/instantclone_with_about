@@ -13,5 +13,3 @@ blueprint.add_url_rule(
     rule='/',
     view_func=views.AboutView.as_view('about')
 )
-
-
